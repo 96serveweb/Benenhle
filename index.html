@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benenhle General Trading | Construction Excellence</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #C8102E;
+            --light: #FFFFFF;
+            --dark: #1A1A1A;
+            --gray: #666666;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--light);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        /* Header */
+        .navbar {
+            padding: 1rem 0;
+            background: var(--light);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-link {
+            color: var(--primary) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem !important;
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--secondary) !important;
+        }
+        
+        .btn-primary {
+            background: var(--secondary);
+            border: none;
+            padding: 0.6rem 1.8rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .btn-primary:hover {
+            background: #A50E25;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            padding-top: 80px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: var(--primary);
+            color: var(--light);
+        }
+        
+        .swiper {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .swiper-slide {
+            position: relative;
+        }
+        
+        .slide-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Text Animations */
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .animate-title {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .animate-subtitle {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s 0.3s forwards;
+        }
+        
+        .hero-buttons {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s 0.6s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+            border: none;
+            color: white;
+            padding: 0.75rem 2rem;
+            font-weight: 500;
+            margin-right: 1rem;
+            transition: var(--transition);
+        }
+        
+        .btn-secondary:hover {
+            background: #A50E25;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline-light {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--light);
+            padding: 0.75rem 2rem;
+            transition: var(--transition);
+        }
+        
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            display: block;
+        }
+        
+        .required:after {
+            content: ' *';
+            color: var(--secondary);
+        }
+        
+        .form-control {
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: var(--transition);
+            width: 100%;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary);
+        }
+        
+        /* Validation styles */
+        .form-control.is-invalid {
+            border-color: #dc3545;
+            padding-right: calc(1.5em + 0.75rem);
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
+        
+        .form-control.is-valid {
+            border-color: #198754;
+            padding-right: calc(1.5em + 0.75rem);
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
+        
+        .invalid-feedback {
+            display: none;
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: 0.875em;
+            color: #dc3545;
+        }
+        
+        .is-invalid ~ .invalid-feedback {
+            display: block;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.875rem 2.5rem;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: var(--transition);
+            width: 100%;
+            position: relative;
+        }
+        
+        .submit-btn:hover:not(:disabled) {
+            background: #A50E25;
+            transform: translateY(-2px);
+        }
+        
+        .submit-btn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            margin-top: 3rem;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+            border-top: 3px solid var(--secondary);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(200, 16, 46, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        .info-card h5 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .footer-text {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-heading {
+            color: var(--secondary);
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-newsletter {
+            margin-bottom: 2rem;
+        }
+        
+        .newsletter-input {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .newsletter-input input {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .newsletter-input input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .newsletter-input button {
+            background: var(--secondary);
+            border: none;
+            color: white;
+            padding: 0 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .newsletter-input button:hover {
+            background: #A50E25;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-content {
+                padding: 1rem;
+            }
+            
+            .contact-form {
+                padding: 1.5rem;
+            }
+            
+            .nav-link {
+                margin: 0.25rem 0;
+                text-align: center;
+            }
+            
+            .btn-secondary,
+            .btn-outline-light {
+                display: block;
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+            
+            .newsletter-input {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.7rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .navbar-nav {
+                margin-top: 50px;
+            }
+
+            .btn-primary {
+                margin-top: 60px;
+            }
+
+            
+        }
+
+        /* Logo styling */
+.navbar-brand img {
+    height: 60px;
+    width: auto;
+    transition: var(--transition);
+}
+
+
+
+/* Responsive logo sizing */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 0px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 45px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <!-- Logo Image -->
+        <a class="navbar-brand" href="#home">
+            <img src="/assets/images/logo.png" 
+                 alt="Benenhle General Trading Logo" 
+                 style="height: 60px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item ms-2">
+                    <a href="#contact" class="btn btn-primary">Get Quote</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <!-- Swiper Slider -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="/assets/images/002.png" 
+                         alt="Modern Architecture" class="slide-image">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/assets/images/03.jpg" 
+                         alt="Construction Site" class="slide-image">
+                </div>
+            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-title">Building Africa's Future with Precision & Innovation</h1>
+                <p class="hero-subtitle animate-subtitle">
+                    Benenhle General Trading delivers world-class construction and engineering solutions across Africa. 
+                    We combine local expertise with international standards to create sustainable, innovative projects.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-secondary">Start Your Project</a>
+                    <a href="#contact" class="btn btn-outline-light">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team for expert consultation on your construction needs</p>
+            </div>
+            
+            <div class="contact-form">
+                <form id="contactForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label required">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required minlength="2" maxlength="50">
+                                <div class="invalid-feedback">
+                                    Please enter a valid first name (2-50 characters).
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="lastName" class="form-label required">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required minlength="2" maxlength="50">
+                                <div class="invalid-feedback">
+                                    Please enter a valid last name (2-50 characters).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email" class="form-label required">Email Address</label>
+                                <input type="email" class="form-control" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="phone" class="form-label required">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" required pattern="[0-9+\s\-\(\)]{10,20}">
+                                <div class="invalid-feedback">
+                                    Please enter a valid phone number (10-20 digits).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service" class="form-label required">Service Required</label>
+                        <select class="form-control" id="service" required>
+                            <option value="" selected disabled>Select a service</option>
+                            <option value="architecture">Architecture & Design</option>
+                            <option value="civil">Civil & Structural Engineering</option>
+                            <option value="electrical">Electrical Systems</option>
+                            <option value="mechanical">Mechanical Engineering</option>
+                            <option value="project">Project Management</option>
+                            <option value="quantity">Quantity Surveying</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a service.
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label required">Project Details</label>
+                        <textarea class="form-control" id="message" rows="4" required minlength="10" maxlength="1000"></textarea>
+                        <div class="invalid-feedback">
+                            Please provide project details (10-1000 characters).
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h5>Head Office</h5>
+                            <p>24 Bloukrans Cres<br>Albertsdal, South Africa</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h5>Contact Number</h5>
+                            <p>+27 72 837 0963</p>
+                            <small>Mon-Fri: 8AM-5PM</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h5>Email Address</h5>
+                            <p>info@benenhle.co.za</p>
+                            <small>Response within 24 hours</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <a href="#home" class="footer-logo">BENENHLE<span>GT</span></a>
+                <p class="footer-text">
+                    A multidisciplinary construction firm delivering innovative, reliable, 
+                    and sustainable solutions across diverse industries in Africa.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="footer-heading">Our Services</h5>
+                <ul class="footer-links">
+                    <li>Architecture</li>
+                    <li>Civil & Structural Engineering</li>
+                    <li>Electrical & Electronics</li>
+                    <li>Mechanical & Fire Engineering</li>
+                    <li>Project Management</li>
+                    <li>Quantity Surveying</li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <h5 class="footer-heading">Why Choose Us</h5>
+                <ul class="footer-links">
+                    <li>Innovation & Future-Proof Solutions</li>
+                    <li>Comprehensive Multidisciplinary Expertise</li>
+                    <li>Local Insight with Global Standards</li>
+                    <li>Client-Centric Approach</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2026 Benenhle General Trading. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            speed: 800,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            }
+        });
+        
+        swiper.on('slideChangeTransitionStart', function() {
+            resetAnimations();
+        });
+        
+        swiper.on('slideChangeTransitionEnd', function() {
+            replayAnimations();
+        });
+        
+        function resetAnimations() {
+            const title = document.querySelector('.animate-title');
+            const subtitle = document.querySelector('.animate-subtitle');
+            const buttons = document.querySelector('.hero-buttons');
+            
+            [title, subtitle, buttons].forEach(el => {
+                if (el) {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(20px)';
+                }
+            });
+        }
+        
+        function replayAnimations() {
+            const title = document.querySelector('.animate-title');
+            const subtitle = document.querySelector('.animate-subtitle');
+            const buttons = document.querySelector('.hero-buttons');
+            
+            if (title) {
+                title.style.animation = 'none';
+                title.offsetHeight;
+                title.style.animation = 'fadeInUp 0.8s forwards';
+            }
+            
+            if (subtitle) {
+                subtitle.style.animation = 'none';
+                subtitle.offsetHeight;
+                subtitle.style.animation = 'fadeInUp 0.8s 0.3s forwards';
+            }
+            
+            if (buttons) {
+                buttons.style.animation = 'none';
+                buttons.offsetHeight;
+                buttons.style.animation = 'fadeInUp 0.8s 0.6s forwards';
+            }
+        }
+        
+        // Form validation and email submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            // Real-time validation
+            const inputs = form.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    validateField(this);
+                });
+                
+                input.addEventListener('blur', function() {
+                    validateField(this);
+                });
+            });
+            
+            function validateField(field) {
+                field.classList.remove('is-valid', 'is-invalid');
+                
+                let isValid = true;
+                let errorMessage = '';
+                
+                // Check required fields
+                if (field.hasAttribute('required') && !field.value.trim()) {
+                    isValid = false;
+                    errorMessage = 'This field is required.';
+                }
+                
+                // Validate email format
+                if (field.type === 'email' && field.value.trim()) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(field.value.trim())) {
+                        isValid = false;
+                        errorMessage = 'Please enter a valid email address.';
+                    }
+                }
+                
+                // Validate phone format
+                if (field.id === 'phone' && field.value.trim()) {
+                    const phoneRegex = /^[\d\s\+\-\(\)]{10,20}$/;
+                    const digitsOnly = field.value.replace(/\D/g, '');
+                    if (digitsOnly.length < 10 || digitsOnly.length > 15) {
+                        isValid = false;
+                        errorMessage = 'Please enter a valid phone number (10-15 digits).';
+                    }
+                }
+                
+                // Validate text length
+                if (field.hasAttribute('minlength') && field.value.trim()) {
+                    if (field.value.trim().length < field.getAttribute('minlength')) {
+                        isValid = false;
+                        errorMessage = `Minimum ${field.getAttribute('minlength')} characters required.`;
+                    }
+                }
+                
+                if (field.hasAttribute('maxlength') && field.value.trim()) {
+                    if (field.value.trim().length > field.getAttribute('maxlength')) {
+                        isValid = false;
+                        errorMessage = `Maximum ${field.getAttribute('maxlength')} characters allowed.`;
+                    }
+                }
+                
+                if (isValid && field.value.trim()) {
+                    field.classList.add('is-valid');
+                } else if (!isValid) {
+                    field.classList.add('is-invalid');
+                }
+                
+                return isValid;
+            }
+            
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate all fields
+                let formIsValid = true;
+                const requiredFields = form.querySelectorAll('[required]');
+                
+                requiredFields.forEach(field => {
+                    if (!validateField(field)) {
+                        formIsValid = false;
+                    }
+                });
+                
+                if (!formIsValid) {
+                    const firstError = form.querySelector('.is-invalid');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        firstError.focus();
+                    }
+                    return;
+                }
+                
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="loading"></span> Sending...';
+                
+                // Collect form data
+                const formData = {
+                    firstName: document.getElementById('firstName').value.trim(),
+                    lastName: document.getElementById('lastName').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    phone: document.getElementById('phone').value.trim(),
+                    service: document.getElementById('service').value,
+                    message: document.getElementById('message').value.trim(),
+                    date: new Date().toLocaleString('en-ZA', { 
+                        timeZone: 'Africa/Johannesburg',
+                        dateStyle: 'medium',
+                        timeStyle: 'short'
+                    })
+                };
+                
+                // Create email content
+                const subject = `New Project Inquiry - ${formData.firstName} ${formData.lastName}`;
+                const body = `
+                PROJECT INQUIRY FROM BENENHLE GENERAL TRADING WEBSITE
+                =====================================================
+
+                CONTACT INFORMATION:
+                --------------------
+                Name: ${formData.firstName} ${formData.lastName}
+                Email: ${formData.email}
+                Phone: ${formData.phone}
+
+                SERVICE REQUESTED:
+                ------------------
+                ${formData.service}
+
+                PROJECT DETAILS:
+                ----------------
+                ${formData.message}
+
+                SUBMISSION DETAILS:
+                -------------------
+                Submitted: ${formData.date}
+                Website: ${window.location.href}
+                                `.trim();
+                
+                const mailtoLink = `mailto:info@benenhle.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                
+                setTimeout(() => {
+                    window.location.href = mailtoLink;
+                    
+                    submitBtn.innerHTML = '<i class="fas fa-check me-2"></i> Opening Email Client...';
+                    submitBtn.style.background = '#28a745';
+                    
+                    setTimeout(() => {
+                        form.reset();
+                        
+                        // Clear validation states
+                        inputs.forEach(input => {
+                            input.classList.remove('is-valid', 'is-invalid');
+                        });
+                        
+                        // Reset button
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = 'Submit Request';
+                        submitBtn.style.background = '';
+                        
+                        // Show confirmation alert
+                        alert(`Thank you, ${formData.firstName}! Your email client should now open with a pre-filled email. Please review and send the email to complete your inquiry.`);
+                    }, 2000);
+                }, 1500);
+            });
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu
+                    const navbarCollapse = document.querySelector('.navbar-collapse.show');
+                    if (navbarCollapse) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.7rem 0';
+            } else {
+                navbar.style.padding = '1rem 0';
+            }
+            
+            // Update active nav
+            updateActiveNav();
+        });
+        
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Initialize active nav
+        updateActiveNav();
+    
+    </script>
+</body>
+</html>
